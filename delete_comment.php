@@ -20,4 +20,5 @@ if (!$result) {
   die('ERROR: ' . $conn->error);
 }
 
-header('Location: index.php');
+$previous_dir = $_SERVER['HTTP_REFERER'];
+header("Location: $previous_dir");

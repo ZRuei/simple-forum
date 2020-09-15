@@ -104,7 +104,7 @@ textarea {
   background-color: #fdffff;
   outline: none;
   resize: none;
-  border:0;
+  border: 0;
   font-size: 1.6rem;
   line-height: 1.2em;
  
@@ -198,6 +198,3 @@ textarea {
   background-color: #54B97D;
   color: #F8F9F9;
 }
-
-
-
