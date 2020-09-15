@@ -1,6 +1,6 @@
-### `2020-09-15` 基礎 CRUD 與會員機制
+## `2020-09-15` 基礎 CRUD 與會員機制
 
-此為 Lidemy 在後端基礎課程的主要專案，因為去年在[第三期課程](https://github.com/Lidemy/mentor-program-3rd-ZRuei/tree/master/homeworks/week12/hw1)時相當混亂與匆忙的完成留言板，不確定自己到底都寫了些什麼，今年再重新做一次，用來熟悉 PHP 基礎語法、MySQL 的 query 操作、Data Schema 與後端伺服器的基礎概念。
+此為 Lidemy 在後端基礎課程的主要專案，因為去年在[第三期課程](https://github.com/Lidemy/mentor-program-3rd-ZRuei/tree/master/homeworks/week12/hw1)時相當混亂與匆忙地完成留言板，不確定自己到底都寫了些什麼，今年再重新做一次，用來熟悉 PHP 基礎語法、MySQL 的 query 操作、Data Schema 與後端伺服器的基礎概念。
 
 另外，去年是使用 XAMPP 大禮包內附的PHP、Apache 、phpMyAdmin 這樣的組合作為開發環境預覽網頁，每次都要打開 XAMPP、啟動伺服器、mount Volumes 再將檔案新增到 htdocs 資料夾，覺得有點懶惰。所以這次改為直接監聽本地伺服器的方式，在 command line 輸入 `php -S localhost:8080` ，圖形化資料庫工具則改用 Sequal Pro 處理速度有感提升，在測試階段用起來比較舒適。
 
@@ -59,17 +59,21 @@
 - 主畫面 `index.php`
 
 - 會員機制
-	使用者可以註冊、登入留言版，登入後可以留言、管理自己的留言。
-  - 註冊 `register.view.php` / `register.php`		
+	
+  使用者可以註冊、登入留言版，登入後可以留言、管理自己的留言。
+  
+  - 註冊 `register.view.php` / `register.php`
   - 登入 `login.view.php` / `login.php`
   - 登出 `logout.php`
-
+	
 - 個人留言管理
-	使用者登入後可以新增、編輯、刪除自己的留言，經由身份辨識避免更動不屬於自己的留言。
+	
+  使用者登入後可以新增、編輯、刪除自己的留言，經由身份辨識避免更動不屬於自己的留言。
+  
   - 新增留言 `add.php`
   - 編輯留言 `update_comment.view.php` / `update_comment.php`
   - 刪除留言 `delete_comment.php`
-
+	
 - 其他
   - 分頁導覽
   - 使用 `htmlspecialchars()` 防止 XSS
@@ -77,12 +81,13 @@
   - 使用 PHP 內建 SESSION 機制，作為網站的身份辨識
   - 使用 `password_hash('your_password', PASSWORD_DEFAULT)` 雜湊註冊密碼，不存明碼在資料庫中，並以 `password_verify($password , $hash_password)` 作為登入密碼驗證
 
-##### 未完成
+#### 未完成
 
 - 版面設計
   - 註冊頁面
   - 登入頁面
   - 編輯與刪除按鈕
+  
 - 權限管理 role
   - admin 可以新增留言、編輯與刪除任意留言
   - normal 可以新增留言、編輯與刪除自己的留言
