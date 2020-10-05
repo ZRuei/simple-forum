@@ -20,7 +20,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $username);
 $result = $stmt->execute();
 
-if (!result) {
+if (!$result) {
   die($conn->error);
 }
 

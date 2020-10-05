@@ -81,7 +81,7 @@
   - 使用 PHP 內建 SESSION 機制，作為網站的身份辨識
   - 使用 `password_hash('your_password', PASSWORD_DEFAULT)` 雜湊註冊密碼，不存明碼在資料庫中，並以 `password_verify($password , $hash_password)` 作為登入密碼驗證
 
-#### 未完成
+#### 待辦項目
 
 - 版面設計
   - 註冊頁面
@@ -101,7 +101,23 @@
 
 
 
+## `2020-10-05` 以 AJAX 改寫文章發佈
 
 
 
+### 功能
+
+- 拆分文章發佈的後端資料與前端頁面，發佈文章不換頁
+- 錯誤訊息也儲存在後端所帶來的 JSON 資料中
+- 初步拆分頁面上各功能區塊
+  - 標頭 `navbar.php`
+  - 留言區塊 `comments.php`
+  - 留言編輯按鈕 `buttons.php`
+  - 分頁 `pagination.php`
+
+#### 待辦項目
+
+- 刪除與編輯以 AJAX 改寫
+- 版面設計
+  - 錯誤訊息提示
 

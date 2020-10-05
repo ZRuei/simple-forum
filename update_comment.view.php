@@ -1,13 +1,12 @@
 <?php
-session_start();
-require_once './conn.php';
 require_once './functions.php';
+require_once './check_login.php';
+
+if (!$username) {
+  header('location: index.php');
+}
 
 $comment_id = $_GET['id'];
-$username = NULL;
-if(!empty($_SESSION['username'])) {
-  $username = $_SESSION['username'];
-}
 
 $sql = "SELECT comments.content, users.username 
         FROM comments LEFT JOIN users 
@@ -16,6 +15,7 @@ $sql = "SELECT comments.content, users.username
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('is', $comment_id, $username);
 $result = $stmt->execute();
+
 if (!$result) {
   die('ERROR: '. $conn->error);
 }

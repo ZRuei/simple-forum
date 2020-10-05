@@ -1,7 +1,6 @@
 <?php
-session_start();
-require_once './conn.php';
 require_once './functions.php';
+require_once './check_login.php';
 
 if (empty($_POST['content'])) {
   die('仍有未填寫資料');
@@ -17,7 +16,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('sii', $content, $comment_id, $user_id);
 $result = $stmt->execute();
 
-if (!result) {
+if (!$result) {
   die('ERROR: '. $conn->error);
 }
 

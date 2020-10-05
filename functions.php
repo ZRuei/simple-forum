@@ -1,6 +1,5 @@
 <?php
-
-require_once './conn.php'; 
+require_once 'conn.php'; 
 
 function generateToken() {
   $length = 16;
@@ -25,6 +24,15 @@ function getUserByUsername($username) {
   $result = $stmt->execute();
   $result = $stmt->get_result();
   return $result->fetch_assoc();
+}
+
+function showMessage($status, $msg) {
+  $json = array(
+    'ok' => $status,
+    'message' => $msg
+  );
+  $res = json_encode($json);
+  echo $res;
 }
 
 
