@@ -4,6 +4,10 @@
 
 另外，去年是使用 XAMPP 大禮包內附的PHP、Apache 、phpMyAdmin 這樣的組合作為開發環境預覽網頁，每次都要打開 XAMPP、啟動伺服器、mount Volumes 再將檔案新增到 htdocs 資料夾，覺得有點懶惰。所以這次改為直接監聽本地伺服器的方式，在 command line 輸入 `php -S localhost:8080` ，圖形化資料庫工具則改用 Sequal Pro 處理速度有感提升，在測試階段用起來比較舒適。
 
+### 頁面圖示
+
+![image-20210812164002775](https://i.imgur.com/Dljhe2K.png)
+
 ### 資料庫
 
 - 連線到資料庫 `conn.php`
@@ -118,6 +122,7 @@
 #### 待辦項目
 
 - 刪除與編輯以 AJAX 改寫
+- 分頁從原本的 Offset Based 改為 Cursor Based
 - 版面設計
   - 錯誤訊息提示
 
